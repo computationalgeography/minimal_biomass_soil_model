@@ -28,7 +28,7 @@ erosionRateBareBedrockThickMax = meanErosionRate/factor     # 0.021, E_t in pape
 print('E_t is ', erosionRateBareBedrockThickMax)
 erosionRateBareBedrockThickZero = meanErosionRate*factor    # 0.084, E_0 in paper -> somewhat sensitive, determ. left side
 print('E_0 is ', erosionRateBareBedrockThickZero)            # ie crosssing with y axis
-erosionExponentParameter= 20.0                              # 20, c in paper (later k) (in paper 1/20, 0.05 m) -> somewhat sensitive,
+erosionExponentParameter= 20.0                              # 20, (in paper k = 1/erosionExponentParameter = 0.05 m) -> somewhat sensitive,
                                                             # determines left side curve
 
 
@@ -43,7 +43,8 @@ erosionExponentParameter= 20.0                              # 20, c in paper (la
 
 # this scenario, note that s in the paper is fixed to 0.4
 growthRateParameter=2.1  # 2.1, r in paper -> collapse time is not sensitive
-carryingCapacity=2.9     # 2.9, c in paper -> very sensitive 
+#carryingCapacity=2.9     # 2.9, c in paper -> very sensitive 
+#carryingCapacity=3.5     # 2.3, c in paper -> very sensitive 
                          # (can cause slow shift without grazing)
                          # cannot be below minimum reg thickness of regolith function!
                          # (then there is no
@@ -52,6 +53,8 @@ carryingCapacity=2.9     # 2.9, c in paper -> very sensitive
                          # scenarios for paper, default weathering (original values),
                          # carrying capacity
                          # 2.3 or 3.5
+                         # fig 3a: change to 2.3 -> shift at grazing pressure 1.4
+                         # fig 3b: change to 3.5 -> shift at grazing pressure 2.3
 regolithRange=0.04       # 0.04, d in paper -> very sensitive (can cause fast shift without grazing, at 0.7)
                          # at high values, it seems vegetation system is in equilibrium does not hold
 regolithIntercept=-0.7   # -0.7, i in paper -> a bit sensitive

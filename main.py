@@ -53,6 +53,7 @@ class CatchmentModel(DynamicModel,MonteCarloModel):
     # before starting increasing the grazing pressure (called slope here).
     if self.currentTimeStep() > 10000 * 52:
       self.slope=self.slope+0.00001
+    # self.slope = 1.76 # this is the default value in paper for figure 2
 
     if self.currentTimeStep() % 52 == 0 or (self.currentTimeStep() == 1):
       self.thickLi.append(self.thickness)
@@ -91,6 +92,7 @@ class CatchmentModel(DynamicModel,MonteCarloModel):
 
 myModel = CatchmentModel()
 dynamicModel = DynamicFramework(myModel, numberOfTimeSteps)
+dynamicModel.setQuiet(True)
 mcModel = MonteCarloFramework(dynamicModel, nrOfSamples)
 mcModel.setForkSamples(True,2)
 mcModel.run()

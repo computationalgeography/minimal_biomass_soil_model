@@ -11,7 +11,7 @@ def multiplierErosion(biomass,range):
   return numpy.exp(-biomass/range) 
 
 def weathering(thickness,weatheringRateBareBedrock,weatheringExponentParameter):
-  creep=0.0001
+  creep=0.0001 # C in the paper
   weathering=weatheringRateBareBedrock * numpy.exp(-weatheringExponentParameter * thickness)-creep
   return weathering
 

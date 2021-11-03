@@ -13,12 +13,13 @@ main.py
 Contains the model. It is written in the PCRaster Python framework. See
 http://www.pcraster.eu.
 The model writes two files with output timeseries for biomass and
-regolith thickness.
+regolith thickness. It also writes the grazing pressure.
 
 parameters.py
 Contains the parameters. These need to be varied to get different
 realizations of the 'reality'. See the article for the explanation
-of the parameters.
+of the parameters. The parameter values in the file correspond to those in the article
+and settings for some of the scenarios are provided.
 
 plot.py
 Script to plot the timeseries.
